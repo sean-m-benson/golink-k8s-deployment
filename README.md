@@ -9,6 +9,7 @@ Kubernetes manifests for deploying [Tailscale golink](https://github.com/tailsca
    # Edit manifests/secret.yaml and replace the placeholder
    # with your actual auth key from:
    # https://login.tailscale.com/admin/settings/keys
+   ```
    
    You may want to create and assign a tag to your auth key to prevent it from expiring.
 
