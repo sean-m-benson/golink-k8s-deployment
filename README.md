@@ -22,10 +22,10 @@ Kubernetes manifests for deploying [Tailscale golink](https://github.com/tailsca
 Once deployed, access your golink service at: `go/`
 
 ## Files
-
-- `pvc.yaml` - Persistent storage for database
-- `secret.yaml` - Template for auth key (fill in your key)
-- `deployment.yaml` - Main golink deployment
+- `namespace.yaml`: Namespace for Kubernetes resources
+- `pvc.yaml`: Persistent storage for database
+- `secret.yaml`: Template for auth key (fill in your key)
+- `deployment.yaml`: Main golink deployment
 
 # Notes
 - I haven't found a good way to prevent Safari from interpreting go/ URLs as search terms for a search engine. To start, you may need to prefix each go link URL with `http(s)://`. Eventually, once the page is in your browsing history, Safari should give that priority over using it as search terms.
