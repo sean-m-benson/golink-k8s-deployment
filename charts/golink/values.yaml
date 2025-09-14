@@ -4,9 +4,6 @@ tailscale:
   # Get from: https://login.tailscale.com/admin/settings/keys
   # Recommended: Use tagged key with no expiration
   authKey: ""
-  
-  # Hostname for MagicDNS (will be accessible at http://<hostname>/)
-  hostname: "go"
 
 deployment:
   replicaCount: 1
