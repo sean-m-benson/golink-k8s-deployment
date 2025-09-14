@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: golink
+  namespace: golink
+  labels:
+    app: golink
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: golink
+  template:
+    metadata:
+      labels:
+        app: golink
+    spec:
+      containers:
+      - name: golink
+        image: ghcr.io/tailscale/golink:main
+        env:
+        - name: TS_AUTHKEY
+          valueFrom:
+            secretKeyRef:
+              name: golink-auth
+              key: TS_AUTHKEY
+        volumeMounts:
+        - name: data
+          mountPath: /home/nonroot
+          readOnly: false
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "50m"
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: golink-data
