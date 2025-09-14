@@ -5,15 +5,11 @@ Kubernetes manifests for deploying [Tailscale golink](https://github.com/tailsca
 ## Quick Deployment
 
 1. **Edit the secret manifest** with your Tailscale auth key:
-   ```bash
-   # Edit manifests/secret.yaml and replace the placeholder
-   # with your actual auth key from:
-   # https://login.tailscale.com/admin/settings/keys
-   ```
    
-   You may want to create and assign a tag to your auth key to prevent it from expiring.
+   - Edit manifests/secret.yaml and replace the placeholder with your actual auth key, configured [here](https://login.tailscale.com/admin/settings/keys).
+   - You may want to create and assign a tag to your auth key to prevent it from expiring.
 
-2. **Deploy everything**:
+3. **Deploy everything**:
    ```bash
    kubectl apply -f manifests/
    ```
